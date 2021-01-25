@@ -1,4 +1,4 @@
-# Wave Software Development Challenge
+# Wave Software Development Challenge (View Reem's commit at the bottom of this README)
 
 Applicants for the Full-stack Developer role at Wave must
 complete the following challenge, and submit a solution prior to the onsite
@@ -216,3 +216,31 @@ Evaluation of your submission will be based on the following criteria.
    they explained?
 1. Did you separate any concerns in your application? Why or why not?
 1. Does your solution use appropriate data types for the problem as described?
+
+# Reem's README:
+
+Hi there! Thanks for giving me the opportunity to work on this challenge. Below you'll find the instructions on how to run and answers to your questions.
+
+## Instructions on running it 
+1. Running is super easy. All you'll have to do is `cd` into the `backend` folder. Run an `npm install` to make sure you have all the node modules ready. Run an `npm start` to make sure it's connected to localhost:3001. 
+   - You're going to keep this terminal window open in order to view the final JSON object output of the data. I also included a `console.table` of the array inside the JSON object in the output so you could get a proper visual to see how the `amountPaid` will change. 
+
+1. Also `cd` into the `frontend` folder on **another** tab on your terminal application and `npm install`, and once that's done grabbing the node modules, then `npm start` that as well and it should take you to a browser window with localhost:3000. (both `backend` and `frontend` should be running now).
+    - Once on the localhost:3000, go into your console window on the browser to view the time reports data that you should be uploading. 
+    - The database I'm using to store the time reports data is in Firebase and that should already be connected and running. I made sure to already have the file that came with this repo (`time-report-42.csv`) uploaded so you could start with an idea of how the object looks like in the console.
+2. Press the `browse` button and select any `csv` file with the `time-report-xx` format mentioned in the rules and you should be able to see it being uploaded to Firebase (seen in console window) and once you select `upload`, the terminal window showing the backend output will display the final data required.
+    - Note that you're going to get an alert whenever you upload a new time report, this is due to it firing multiple times, but it is only uploaded once to the database. Best to think of it as a feature rather than a bug (for now) 😅
+
+## Answering your questions
+1. I tested the implementation by creating many `csv` files with the format of the file and ran it through the code. Each time, my code was able to parse through the data and upgrade the final JSON object based on employee ID and pay period accurately. It was more of a simple A/B testing of my own work.
+1. I would have probably used a more scalable database solution, like MongoDB along with Mongoose. The reason I didn't choose to add those two solutions was because I'm much more front-end focused and I thought it best to stick to my guns in the short amount of time necessary. I tried to connect the code to MySQL but found it to be more tedious and not as user-friendly for you folks to test out the challenge on. Firebase was the best alternative because:
+    - It was super easy to set up. I didn't need to download anything and have you download anything either.
+    - I found it to be a more intuitive database management system for someone who isn't very well-versed in backend and MERN
+1. Biggest compromise is that I really wanted to go into the challenge with a backend approach. However, I realized that in the short amount of time I had, I couldn't produce something that is simple and quality-driven with just using backend. I'm primarily a frontend developer and I was able to tackle the challenge with more confidence in my step by thinking about a file upload from the frontend to a NodeJS server in the backend, that would eventually handle the data I was sending it.
+    - I wanted to incorporate more MongoDB and Mongoose (mainly to also learn those tools)
+    - I wanted to run the HTTP request straight from Postman and upload the file from there, but it made more sense to me to create a frontend that could handle the first task of the challenge and handle the bugs later.
+    - I also wanted to work more on the Firebase bug I had that was firing multiple message of my data being pushed (even though each unique file is only ever uploaded once)
+
+I truly hope you enjoyed my take on this challenge! 
+
+Reem
